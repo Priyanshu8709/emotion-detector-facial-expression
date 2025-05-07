@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script> 
+<script src="script.js"></script>
+</head>
+<body class="bg-slate-900 text-cyan-300">
+    <div class="flex flex-col items-center justify-center align-items-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-cyan-300 mb-6 border-b-4 border-cyan-300 inline-block">
+            Smart Emotion Detector
+        </h1>
+    </div>
+    <div class="bg-gray-100 rounded-lg shadow-lg p-6 max-w-md mx-auto mt-10">
+        <p class="font-semibold text-lg sm:text-xl text-gray-600 mb-8 flex justify-center">
+            <img src="https://img.icons8.com/fluency/48/000000/artificial-intelligence.png" alt="AI Logo" class="w-8 h-8 mr-2">
+            Upload an image of yourself, and we'll analyze your emotion using advanced AI technology.
+        </p>
+        
+        <div class="flex flex-col items-center sm:mt-6">
+            
+            <img id="previewImage" src="" alt="Image Preview" class="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-cover rounded-lg shadow-md mb-6 hidden" />
+            
+            <input type="file" id="fileInput" class="w-full max-w-[14rem] sm:max-w-[16rem] mb-6 sm:mb-8 p-2 sm:p-3 border-2 border-gray-300 rounded-md bg-cyan-50 text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-300 transition duration-200" accept="image/*" onchange="previewFile()" />
+            
+            <button id="uploadButton" onclick="uploadImageAndFetchResult()" class="bg-cyan-300 hover:bg-slate-900 hover:text-cyan-300 text-slate-900 font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition sm:mt-4">
+                Upload Image
+            </button>
+        </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="spinner" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="border-4 border-gray-300 border-t-green-500 rounded-full w-12 h-12 sm:w-16 sm:h-16 animate-spin"></div>
+    </div>
+
+    
+    <div class="mt-10 text-center">
+        <p id="resultDisplay" class="text-xl sm:text-2xl font-semibold text-cyan-300"></p>
+    </div>
+
+   
+    <div class="bg-gray-100 shadow-md rounded-lg p-6 sm:p-8 w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto mt-10 text-center">
+        <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">How It Works</h2>
+        <p class="text-sm sm:text-base text-gray-600 mb-6">
+            Our AI-powered Emotion Detector analyzes the uploaded image to determine the Emotion score. It uses advanced image recognition and machine learning algorithms to provide accurate results.
+        </p>
+        <ul class="list-disc list-inside text-left text-gray-600 text-sm sm:text-base">
+            <li>Upload a clear image.</li>
+            <li>Click the "Upload Image" button.</li>
+            <li>Wait for the analysis to complete and view the results.</li>
+        </ul>
+    </div>
+    
+    <footer class="mt-10 text-center text-gray-500 text-sm sm:text-base">
+        <p>&copy; 2025 Smart Emotion Detector. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
